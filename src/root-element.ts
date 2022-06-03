@@ -1,13 +1,9 @@
 import { html, css, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import './views/todo-view';
+import './components/header';
+import './components/footer';
 
-/**
- * An example element.
- *
- * @slot - This element has a slot
- * @csspart button - The button
- */
 @customElement('root-element')
 export class RootElement extends LitElement {
   static styles = css`
@@ -20,9 +16,9 @@ export class RootElement extends LitElement {
 
   @property()
   render() {
-    return html`<header>header</header>
+    return html`<header-component></header-component>
       <main><todo-view></todo-view></main>
-      <footer>footer</footer> `;
+      <footer-component></footer-component> `;
   }
 }
 
