@@ -54,7 +54,14 @@ export class TodoView extends LitElement {
       <vaadin-radio-group .value=${this.filter} @value-changed=${this.filterChanged}>
         ${Object.values(filters).map(f => html`<vaadin-radio-button .value=${f}>${f}</vaadin-radio-button>`)}
       </vaadin-radio-group>
+      <div class="clear">
+        <vaadin-button @click=${this.clearCompletedTodos}> Clear Completed Todos </vaadin-button>
+      </div>
     `;
+  }
+
+  clearCompletedTodos() {
+    this.todos = this.todos.filter(todo => !todo.completed);
   }
 
   filterChanged(e: CustomEvent) {

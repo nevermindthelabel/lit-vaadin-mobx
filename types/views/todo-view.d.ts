@@ -14,6 +14,7 @@ export declare class TodoView extends LitElement {
     filter: string;
     task: string;
     render(): import("lit-html").TemplateResult<1>;
+    clearCompletedTodos(): void;
     filterChanged(e: CustomEvent): void;
     applyFilter(todos: Todo[]): Todo[];
     shortcutEvent(e: KeyboardEvent): void;
