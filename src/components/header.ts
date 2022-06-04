@@ -5,7 +5,10 @@ import { customElement, property } from 'lit/decorators.js';
 export class HeaderComponent extends LitElement {
   static styles = css``;
 
-  @property()
+  @property({ type: Number })
+  completedTodos = 0;
+  @property({ type: Number })
+  totalTodos = 0;
   render() {
     return html`
       <header>
