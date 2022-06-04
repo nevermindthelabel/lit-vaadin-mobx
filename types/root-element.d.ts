@@ -7,6 +7,7 @@ export declare class RootElement extends LitElement {
     completedTodos: number;
     totalTodos: number;
     render(): import("lit-html").TemplateResult<1>;
+    handleAddedTodos(e: CustomEvent): void;
 }
 declare global {
     interface HTMLElementTagNameMap {
