@@ -23,8 +23,13 @@ export class RootElement extends LitElement {
         .totalTodos=${this.totalTodos}
         .completedTodos=${this.completedTodos}
       ></header-component>
-      <main><todo-view></todo-view></main>
+      <main><todo-view @todo-added=${this.handleAddedTodos}></todo-view></main>
       <footer-component></footer-component> `;
+  }
+
+  handleAddedTodos(e: CustomEvent) {
+    const { todos, completed } = e.detail;
+    console.log(todos, completed);
   }
 }
 
