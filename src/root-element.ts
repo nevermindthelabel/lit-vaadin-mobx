@@ -14,9 +14,15 @@ export class RootElement extends LitElement {
     }
   `;
 
-  @property()
+  @property({ type: Number })
+  completedTodos = 0;
+  @property({ type: Number })
+  totalTodos = 0;
   render() {
-    return html`<header-component></header-component>
+    return html`<header-component
+        .totalTodos=${this.totalTodos}
+        .completedTodos=${this.completedTodos}
+      ></header-component>
       <main><todo-view></todo-view></main>
       <footer-component></footer-component> `;
   }
