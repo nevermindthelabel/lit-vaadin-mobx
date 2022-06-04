@@ -13,6 +13,9 @@ export class HeaderComponent extends LitElement {
     return html`
       <header>
         <h1>A beautiful todo app</h1>
+        ${this.totalTodos
+          ? html`${this.completedTodos} / ${this.totalTodos} completed`
+          : html`<p>add a todo to start tracking</p>`}
       </header>
     `;
   }
