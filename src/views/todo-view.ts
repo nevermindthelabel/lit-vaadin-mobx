@@ -101,6 +101,13 @@ export class TodoView extends LitElement {
     if (this.task) {
       this.todos = [...this.todos, { task: this.task, completed: false }];
       this.task = '';
+      this.dispatchEvent(
+        new CustomEvent('todo-added', {
+          composed: true,
+          bubbles: true,
+          detail: { todos: this.todos.length, completed: this.todos.filter(todo => todo.completed).length }
+        })
+      );
     }
   }
 }
