@@ -39,7 +39,8 @@ export class RootElement extends LitElement {
 
   handleAddedTodos(e: CustomEvent) {
     const { todos, completed } = e.detail;
-    console.log(todos, completed);
+    this.totalTodos = todos;
+    this.completedTodos = completed;
   }
 }
 
