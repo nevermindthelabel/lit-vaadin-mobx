@@ -45,17 +45,21 @@ export class TodoView extends LitElement {
       <div class="todos-list">
         ${this.applyFilter(this.todos).map(
           todo => html`<div class="item">
-            <vaadin-checkbox ?checked=${todo.completed} @change=${() => this.updateTodo(todo)}
-              >${todo.task}</vaadin-checkbox
-            >
+            <vaadin-checkbox
+              ?checked=${todo.completed}
+              @change=${() => this.updateTodo(todo)}
+              .label=${todo.task}
+            ></vaadin-checkbox>
           </div>`
         )}
       </div>
       <vaadin-radio-group .value=${this.filter} @value-changed=${this.filterChanged}>
-        ${Object.values(filters).map(f => html`<vaadin-radio-button .value=${f}>${f}</vaadin-radio-button>`)}
+        ${Object.values(filters).map(f => html`<vaadin-radio-button .value=${f} .label=${f}></vaadin-radio-button>`)}
       </vaadin-radio-group>
       <div class="clear">
-        <vaadin-button @click=${this.clearCompletedTodos}> Clear Completed Todos </vaadin-button>
+        ${this.todos.length
+          ? html` <vaadin-button @click=${this.clearCompletedTodos}> Clear Completed Todos </vaadin-button> `
+          : ''}
       </div>
     `;
   }
