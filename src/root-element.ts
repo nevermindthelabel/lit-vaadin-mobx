@@ -11,6 +11,16 @@ export class RootElement extends LitElement {
       display: grid;
       grid-template-rows: auto 1fr auto;
       min-height: 100vh;
+      place-items: center;
+      padding: 1em 2em;
+    }
+    header-component {
+      grid-column: 1 / -1;
+      width: calc(100vw - 2em);
+    }
+    footer-component {
+      grid-column: 1 / -1;
+      width: calc(100vw - 2em);
     }
   `;
 
