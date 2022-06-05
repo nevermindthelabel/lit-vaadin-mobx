@@ -8,8 +8,7 @@ export class FooterComponent extends LitElement {
   @property()
   render() {
     return html`<footer>
-      &copy;
-      <p>people who do stuff</p>
+      <p>&copy; people who do stuff</p>
     </footer>`;
   }
 }
