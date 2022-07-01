@@ -89,12 +89,15 @@ export class TodoView extends LitElement {
     }
   }
 
-  updated() {
-    console.log(this.todos);
-  }
-
   updateTodo(aTodo: Todo) {
     this.todos = this.todos.map(todo => (aTodo === todo ? { task: todo.task, completed: !todo.completed } : todo));
+    this.dispatchEvent(
+      new CustomEvent('todos-updated', {
+        composed: true,
+        bubbles: true,
+        detail: { todos: this.todos.length, completed: this.todos.filter(todo => todo.completed).length }
+      })
+    );
   }
 
   updateTask(e: InputEvent) {
