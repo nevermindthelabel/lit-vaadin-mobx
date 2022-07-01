@@ -7,6 +7,7 @@ export declare class RootElement extends LitElement {
     completedTodos: number;
     totalTodos: number;
     render(): import("lit-html").TemplateResult<1>;
+    handleUpdatedTodos(e: CustomEvent): void;
     handleAddedTodos(e: CustomEvent): void;
 }
 declare global {

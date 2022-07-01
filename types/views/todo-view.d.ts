@@ -18,7 +18,6 @@ export declare class TodoView extends LitElement {
     filterChanged(e: CustomEvent): void;
     applyFilter(todos: Todo[]): Todo[];
     shortcutEvent(e: KeyboardEvent): void;
-    updated(): void;
     updateTodo(aTodo: Todo): void;
     updateTask(e: InputEvent): void;
     addTodo(): void;
